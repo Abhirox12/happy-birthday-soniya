@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Friendship</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0b1c3d, #1e3c72, #5d8dc5);
+      color: #f0f8ff;
+      overflow-x: hidden;
+      animation: zoomy 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes zoomy {
+      from { background-size: 100% 100%; }
+      to { background-size: 110% 110%; }
+    }
+
+    .friendship-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .friendship-box {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      max-width: 1200px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      z-index: 1;
+    }
+
+    .friendship-text {
+      flex: 2;
+      font-size: 1.2rem;
+      line-height: 2;
+    }
+
+    .friendship-photo {
+      flex: 1;
+    }
+
+    .friendship-photo img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(173, 216, 230, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .friendship-photo img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .friendship-box {
+        flex-direction: column;
+      }
+    }
+
+    #glitter-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .navigation-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .navigation-link a {
+      color: #f0f8ff;
+      font-size: 1.2rem;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <canvas id="glitter-canvas"></canvas>
+
+  <div class="friendship-container">
+    <div class="friendship-box">
+      <div class="friendship-text">
+        <p>FunFact :- tere ko janam liye 210,384+ ghante ho chuke hai &#128540;. or hamari friendship ko 72,288+ &#128519;</p>
+        <p>but you know hamari friendship hai to sabse different i mean baki to roz milte h kisi na kisi bahane ya baat krte hai but hamara case alag hi raha chahe kitna time baat na bhi ho tab bhi vo friendship nhi tuti, or na hi
+          school life ka koi or itne ache se contact me raha mere sath an hi tere sath.</p>
+        <p>and is saal jb mujhe sabse jyada jarurat thi tab tu thi sath so a big thanks for that &#128522;</p>
+      </div>
+      <div class="friendship-photo">
+        <img src="friend2.png" alt="Our friendship moments">
+      </div>
+    </div>
+    <div class="navigation-link">
+      <br>
+      <a href="poem.html">Next Page →</a>
+    </div>
+  </div>
+
+  <canvas id="balloons"></canvas>
+  <canvas id="fireworks"></canvas>
+  <canvas id="flowers"></canvas>
+  <canvas id="glitter"></canvas>
+  <script src="glitter.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

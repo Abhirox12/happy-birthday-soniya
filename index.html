@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0b1c3d, #1e3c72, #5d8dc5);
+      overflow-x: hidden;
+      position: relative;
+      color: #f0f8ff;
+      animation: zoomy 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes zoomy {
+      from {
+        background-size: 100% 100%;
+      }
+      to {
+        background-size: 110% 110%;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+
+    .landing {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .landing h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #f0f8ff;
+      margin-bottom: 20px;
+    }
+
+    .landing p {
+      font-size: 1.2rem;
+      color: #f0f8ff;
+      margin-bottom: 30px;
+    }
+
+    .landing button {
+      background-color: #5d8dc5;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(93, 141, 197, 0.6);
+      transition: 0.3s ease;
+    }
+
+    .landing button:hover {
+      background-color: #79aee9;
+    }
+
+    .letter {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .letter.show {
+      display: flex;
+    }
+
+    .letter-wrapper {
+      display: flex;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .message-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #f0f8ff;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      gap: 40px;
+    }
+
+    .text-content {
+      flex: 2;
+    }
+
+    .letter-photo-inside {
+      flex: 1;
+    }
+
+    .letter-photo-inside img.friend-photo {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(173, 216, 230, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .letter-photo-inside img.friend-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .next-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .next-btn button {
+      background-color: #5d8dc5;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(93, 141, 197, 0.6);
+      transition: 0.3s ease;
+    }
+
+    .next-btn button:hover {
+      background-color: #79aee9;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .message-box {
+        flex-direction: column-reverse;
+        font-size: 1rem;
+        padding: 15px;
+      }
+
+      .letter-photo-inside {
+        margin-bottom: 20px;
+      }
+
+      .text-content {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <section class="landing">
+      <div class="left">
+        <h1>Happy Birthday, Soniya ✨</h1>
+        <p>You make the world a little softer just by existing.</p>
+        <button onclick="nextPage()">Enter Your Birthday Room</button>
+      </div>
+    </section>
+
+    <section class="letter" id="letter">
+      <div class="letter-wrapper">
+        <div class="message-box">
+          <div class="text-content">
+            <p>This is not just a birthday wish<br>
+            it's a reminder for you to know how special you are not for me but for your family too</p>
+            <p>its a reminder for you tu bhot important h even if you are doing nothing I mean kuch logo ki exist krna hi kaafi hota h life me ig</p>
+            <p>You know sometimes you give me the hope of being the way i am i mean tere nakhre mene hr ladki me kahi na kahi dekhe h but tere jesi loyality tere jese pyaar krne wala tere jese efforts mene na dekhe</p>
+            <div class="next-btn">
+              <button onclick="goToFriendshipPage()">Next Page →</button>
+            </div>
+          </div>
+          <div class="letter-photo-inside">
+            <img src="friend.jpg" alt="Her photo again" class="friend-photo">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <canvas id="balloons"></canvas>
+  <canvas id="fireworks"></canvas>
+  <canvas id="flowers"></canvas>
+  <canvas id="glitter"></canvas>
+
+  <script>
+    function nextPage() {
+      document.querySelector(".landing").style.display = "none";
+      document.getElementById("letter").classList.add("show");
+    }
+    function goToFriendshipPage() {
+      window.location.href = "friendship.html";
+    }
+  </script>
+  <script src="script.js"></script>
+  <script src="glitter.js"></script>
+</body>
+</html>

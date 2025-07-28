@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Message</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #1a1f3c, #3b518a, #91b1e3);
+      color: #f0f8ff;
+      overflow-x: hidden;
+      animation: bgShift 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      from { background-size: 100% 100%; }
+      to { background-size: 110% 110%; }
+    }
+
+    .final-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final-message {
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+
+    .final-message p {
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .final-message h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-top: 30px;
+      color: #ffddf4;
+    }
+
+    #glitter-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <canvas id="glitter-canvas"></canvas>
+
+  <div class="final-container">
+    <div class="final-message">
+      <p>I know tune merko mana kiya tha ki terko pasand nhi hai but yeh tera din h tu kyu isko khrab krti h.</p>
+      <p>log khehte h sab din ek se hone chahiye sabko sahi treat kro na ke sirf birthday pr krdiya, but mai manta hu sahi treat krna to baki din thik h pr special feel krwana roz possible nhi h vese, but birthday is something all about you so don't waste it koi or special feel krwaye na krwaye ap krwana khud .</p>
+      <p> kisi ko miss krna glt nhi h its human nature but uske liye apne hi din ko is trh treat krna bhi to achi baat nhi h na bacha isliye don't spoil it 💖</p>
+
+      <h1>Happy Birthday Again! 🎂💖</h1>
+      <p>Thank you for being there, always. For being you.</p>
+      <p>May your year ahead be filled with peace, laughter, growth, and people who value you deeply.</p>
+      <p>or mahakaal ji terko ekdum rich type hot caring loving banda as a husband de &#128513;</p>
+    </div>
+  </div>
+  <canvas id="balloons"></canvas>
+  <canvas id="fireworks"></canvas>
+  <canvas id="flowers"></canvas>
+  <canvas id="glitter"></canvas>
+  <script src="glitter.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
